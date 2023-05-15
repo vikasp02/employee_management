@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+
+
+    <!--    <color name="colorPrimary">#008577</color>-->
+    <!--    <color name="colorPrimaryDark">#293859</color>-->
+    <!--    <color name="colorAccent">#D81B60</color>-->
+    <!--    <color name="white">#ffffff</color>-->
+    <color name="grey">#E9EAEE</color>
+    <!--    <color name="yellow">#F8BA0F</color>-->
+    <color name="goodgrey">#535353</color>
+    <!--    <color name="blue">#293859</color>-->
+    <color name="lightgrey">#EEEEEE</color>
+
+    <color name="blue">#2196F3</color>
+
+
+
+    <color name="search">#FB1908</color>
+    <color name="dashboard">#4CAF50</color>
+    <color name="notification">#2196F3</color>
+    <color name="tcolor">#FFFFFFFF</color>
+    <color name="yellow">#FFEB3B</color>
+
+
+    <!--    Bottom navigation-->
+    <color name="bottom_nav">#251f44</color>
+
+    <color name="bottom_nav_unselected_icon">#FFAAAAAA</color>
+    <color name="bottom_nav_selected_icon">#2196F3</color>
+    <color name="bottom_nav_selected_text">#2196F3</color>
+    <color name="bottom_nav_unselected_text">#FFFFFFFF</color>
+
+    <!--    Form Icons Vectors-->
+    <color name="department">#FF5722</color>
+    <color name="doctor">#03A9F4</color>
+    <color name="date">#E91E63</color>
+    <color name="slot">#FF9800</color>
+    <color name="gender">#0E9709</color>
+    <color name="name">#673AB7</color>
+    <color name="email">#096DAF</color>
+    <color name="mobileno">#ED1D0E</color>
+    <color name="reason">#3F51B5</color>
+
+    <!--singlerowdesign_doctor_department-->
+    <color name="text_color_Id">#9C27B0</color>
+    <!--singlerowdesign_doctor_contact us-->
+    <color name="country">#0DBD14</color>
+    <color name="state">#2196F3</color>
+    <!--singlerowdesign_doctor_requestcallback-->
+    <color name="priority">#0DBD14</color>
+    <color name="green">#59F436</color>
+
+
+    <!--    <color name="colorPrimary">#6200EE</color>-->
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#2196F3</color>
+
+
+
+
+<!--</resources>-->
+</resources>
