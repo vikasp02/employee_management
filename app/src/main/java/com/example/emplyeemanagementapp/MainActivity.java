@@ -16,6 +16,15 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.os.Bundle;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+
 public class MainActivity extends AppCompatActivity {
 
     RecyclerView recview;
@@ -24,6 +33,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+
+//    }
+//}
+
 
 
         LinearLayout leftIcon = findViewById(R.id.left_icon);
@@ -70,6 +85,24 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        if (!ConnectivityUtils.isNetworkConnected(this)) {
+            showNoInternetDialog();
+        }
+    }
+
+    private void showNoInternetDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("No Internet Connection");
+        builder.setMessage("Please check your internet connection and try again.");
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+                finish(); // Close the activity or handle appropriately
+            }
+        });
+        builder.setCancelable(false);
+        builder.show();
 
     }
 //    public void onBackPressed() {

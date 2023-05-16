@@ -2,6 +2,7 @@ package com.example.emplyeemanagementapp;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -45,49 +46,51 @@ public class EmployeeAdapter extends RecyclerView.Adapter<EmployeeAdapter.myview
         holder.textViewName.setText(data.get(position).getName());
         holder.textViewUsername.setText(data.get(position).getUsername());
         holder.textViewEmail.setText(data.get(position).getEmail());
-//        holder.textViewAddress.setText(data.get(position).getAddress());
-//        holder.textViewMiddlename.setText(data.get(position).getMiddlename());
-//        holder.textViewLastname.setText(data.get(position).getLastname());
-//        holder.textViewEmail.setText(data.get(position).getEmail());
-//        holder.textViewMobileNumber.setText(data.get(position).getMobilenumber());
-//        holder.textViewGender.setText(data.get(position).getGender());
-//        holder.textViewSlot.setText(data.get(position).getSlot());
-//        holder.textViewReason.setText(data.get(position).getReason());
+        holder.textViewStreet.setText(data.get(position).getAddress().getStreet());
+        holder.textViewSuite.setText(data.get(position).getAddress().getSuite());
+        holder.textViewCity.setText(data.get(position).getAddress().getCity());
+        holder.textViewZipcode.setText(data.get(position).getAddress().getZipcode());
+        holder.textViewLat.setText(data.get(position).getAddress().getGeo().getLat());
+        holder.textViewLng.setText(data.get(position).getAddress().getGeo().getLng());
+        holder.textViewPhone.setText(data.get(position).getPhone());
+        holder.textViewWebsite.setText(data.get(position).getWebsite());
+        holder.textViewCompanyname.setText(data.get(position).getCompany().getName());
+        holder.textViewCatchPhrase.setText(data.get(position).getCompany().getCatchPhrase());
+        holder.textViewBs.setText(data.get(position).getCompany().getBs());
+//
 
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+
+
                 Intent intent = new Intent(view.getContext(),EmployeeUI.class);
+
+
 //                intent.putExtra("id",currentItem.getId());
-//                intent.putExtra("getUhid",currentItem.getUhid());
+
                 intent.putExtra("getName",currentItem.getName());
                 intent.putExtra("getUsername",currentItem.getUsername());
                 intent.putExtra("getEmail",currentItem.getEmail());
-//                intent.putExtra("getAddress",currentItem.getAddress());
-//                intent.putExtra("getMiddlename",currentItem.getMiddlename());
-//                intent.putExtra("getLastname",currentItem.getLastname());
-//                intent.putExtra("getEmail",currentItem.getEmail());
-//                intent.putExtra("getMobilenumber",currentItem.getMobilenumber());
-//                intent.putExtra("getGender",currentItem.getGender());
-//                intent.putExtra("getSlot",currentItem.getSlot());
-//                intent.putExtra("getReason",currentItem.getReason());
+                intent.putExtra("getStreet",currentItem.getAddress().getStreet());
+                intent.putExtra("getSuite",currentItem.getAddress().getSuite());
+                intent.putExtra("getCity",currentItem.getAddress().getCity());
+                intent.putExtra("getZipcode",currentItem.getAddress().getZipcode());
+                intent.putExtra("getLat",currentItem.getAddress().getGeo().getLat());
+                intent.putExtra("getLng",currentItem.getAddress().getGeo().getLng());
+                intent.putExtra("getPhone",currentItem.getPhone());
+                intent.putExtra("getWebsite",currentItem.getWebsite());
+                intent.putExtra("getCompanyname",currentItem.getCompany().getName());
+                intent.putExtra("getCatchPhrase",currentItem.getCompany().getCatchPhrase());
+                intent.putExtra("getBs",currentItem.getCompany().getBs());
+
 
                 view.getContext().startActivity(intent);
 
             }
         });
-
-//        holder.menuPopUp.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                PopupMenu popupMenu=new PopupMenu(mContext, view);
-//                PopupMenu.getMenuInflater().inflate(R.menu.pop_menu,popupMenu.getMenu());
-//                popupMenu.show();
-//            }
-//        });
-
-
     }
 
     @Override
@@ -98,7 +101,9 @@ public class EmployeeAdapter extends RecyclerView.Adapter<EmployeeAdapter.myview
     class myviewloder extends RecyclerView.ViewHolder implements View.OnClickListener, PopupMenu.OnMenuItemClickListener {
 
         ImageView imageButton;
-        TextView textViewId, textViewName, textViewUsername, textViewEmail,textViewAddress;
+        TextView textViewId, textViewName, textViewUsername, textViewEmail,textViewStreet,
+                textViewSuite,textViewCity,textViewZipcode,textViewLat,textViewLng,textViewPhone,
+                textViewWebsite,textViewCompanyname,textViewCatchPhrase,textViewBs;
 
 //        textViewFullname,textViewMiddlename,textViewLastname, textViewEmail, textViewMobileNumber, textViewGender, textViewSlot, textViewReason;
 
@@ -106,18 +111,21 @@ public class EmployeeAdapter extends RecyclerView.Adapter<EmployeeAdapter.myview
             super(itemView);
 
             textViewId = itemView.findViewById(R.id.textView_Id);
-//            textViewDepartment = itemView.findViewById(R.id.textView_Department);
-//            textViewDoctorname = itemView.findViewById(R.id.textView_Doctorname);
-//            textViewDate = itemView.findViewById(R.id.textView_Date);
-            textViewName = itemView.findViewById(R.id.textView_Fullname);
-//            textViewMiddlename = itemView.findViewById(R.id.textView_Middlename);
-//            textViewLastname = itemView.findViewById(R.id.textView_Lastname);
-//            textViewEmail = itemView.findViewById(R.id.textView_Email);
-            textViewUsername = itemView.findViewById(R.id.textView_MobileNumber);
-            textViewEmail = itemView.findViewById(R.id.textView_Gender);
-//            textViewAddress = itemView.findViewById(R.id.textView_Address);
-//            textViewSlot = itemView.findViewById(R.id.textView_Slot);
-//            textViewReason = itemView.findViewById(R.id.textView_Reason);
+            textViewName = itemView.findViewById(R.id.textView_Name);
+            textViewUsername = itemView.findViewById(R.id.textView_Username);
+            textViewEmail = itemView.findViewById(R.id.textView_Email);
+            textViewStreet = itemView.findViewById(R.id.textViewStreet);
+            textViewSuite = itemView.findViewById(R.id.textViewSuite);
+            textViewCity = itemView.findViewById(R.id.textViewCity);
+            textViewZipcode = itemView.findViewById(R.id.textViewZipcode);
+            textViewLat = itemView.findViewById(R.id.textViewLat);
+            textViewLng = itemView.findViewById(R.id.textViewLng);
+            textViewPhone = itemView.findViewById(R.id.textViewPhone);
+            textViewWebsite = itemView.findViewById(R.id.textViewWebsite);
+            textViewCompanyname = itemView.findViewById(R.id.textViewCompanyname);
+            textViewCatchPhrase = itemView.findViewById(R.id.textViewCatchPhrase);
+            textViewBs = itemView.findViewById(R.id.textViewBs);
+
 
             imageButton = itemView.findViewById(R.id.menuMore);
             imageButton.setOnClickListener(this);
@@ -145,6 +153,7 @@ public class EmployeeAdapter extends RecyclerView.Adapter<EmployeeAdapter.myview
 //                }
 //           });
         }
+
 
         @Override
         public void onClick(View view) {
