@@ -39,13 +39,16 @@ public class EmployeeAdapter extends RecyclerView.Adapter<EmployeeAdapter.myview
 
     }
 
+
+
     @Override
     public void onBindViewHolder(@NonNull myviewloder holder, int position) {
         EmployeeModel currentItem = data.get(position);
         holder.textViewId.setText(Integer.toString(data.get(position).getId()));
+
         holder.textViewName.setText(data.get(position).getName());
         holder.textViewUsername.setText(data.get(position).getUsername());
-        holder.textViewEmail.setText(data.get(position).getEmail());
+        holder.textViewEmail.setText(data.get(position).getEmail().toLowerCase());
         holder.textViewStreet.setText(data.get(position).getAddress().getStreet());
         holder.textViewSuite.setText(data.get(position).getAddress().getSuite());
         holder.textViewCity.setText(data.get(position).getAddress().getCity());
@@ -73,7 +76,7 @@ public class EmployeeAdapter extends RecyclerView.Adapter<EmployeeAdapter.myview
 
                 intent.putExtra("getName",currentItem.getName());
                 intent.putExtra("getUsername",currentItem.getUsername());
-                intent.putExtra("getEmail",currentItem.getEmail());
+                intent.putExtra("getEmail",currentItem.getEmail().toLowerCase());
                 intent.putExtra("getStreet",currentItem.getAddress().getStreet());
                 intent.putExtra("getSuite",currentItem.getAddress().getSuite());
                 intent.putExtra("getCity",currentItem.getAddress().getCity());
@@ -91,6 +94,7 @@ public class EmployeeAdapter extends RecyclerView.Adapter<EmployeeAdapter.myview
 
             }
         });
+
     }
 
     @Override
@@ -153,6 +157,7 @@ public class EmployeeAdapter extends RecyclerView.Adapter<EmployeeAdapter.myview
 //                }
 //           });
         }
+
 
 
         @Override

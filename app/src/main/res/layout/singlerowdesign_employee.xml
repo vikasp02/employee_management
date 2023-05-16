@@ -106,6 +106,7 @@
                             android:text="Name"
                             android:layout_gravity="left"
                             android:textColor="@color/black"
+
                             android:textStyle="bold" />
      <TextView
                             android:id="@+id/textView_Middlename"
@@ -145,6 +146,7 @@
                             android:layout_gravity="left"
                             android:textColor="@color/black"
                             android:text="Email"
+                            android:textAllCaps="false"
                             android:autoLink="email"
                             android:textSize="12sp" />
 

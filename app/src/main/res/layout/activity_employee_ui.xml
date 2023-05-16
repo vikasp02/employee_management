@@ -405,6 +405,7 @@
                                     android:layout_height="wrap_content"
                                     android:text="vikas02199@gmail.com"
                                     android:autoLink="email"
+                                    android:textAllCaps="false"
                                     android:textColor="@color/black"
                                     android:textSize="12sp" />
 

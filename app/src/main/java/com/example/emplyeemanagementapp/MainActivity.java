@@ -1,5 +1,7 @@
 package com.example.emplyeemanagementapp;
 
+import androidx.databinding.BindingAdapter;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -84,6 +86,13 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, t.toString(), Toast.LENGTH_SHORT).show();
             }
         });
+
+
+
+
+
+
+
 
         if (!ConnectivityUtils.isNetworkConnected(this)) {
             showNoInternetDialog();
